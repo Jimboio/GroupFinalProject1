@@ -1,0 +1,23 @@
+[
+  {
+    "Id": 2,
+    "FullName": "Andrew Cory Rowe",
+    "Birthdate": "2000-09-09",
+    "CollegeProgram": "Information Technology",
+    "YearInProgram": "Sophomore"
+  },
+  {
+    "Id": 3,
+    "FullName": "Nicklas Gozowsky",
+    "Birthdate": "2000-01-13",
+    "CollegeProgram": "Information Technology",
+    "YearInProgram": "Sophomore"
+  },
+  {
+    "Id": 4,
+    "FullName": "William Cubbage",
+    "Birthdate": "1985-07-19",
+    "CollegeProgram": "Information Technology",
+    "YearInProgram": "Sophomore"
+  }
+]
