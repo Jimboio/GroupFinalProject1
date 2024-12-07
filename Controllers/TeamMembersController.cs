@@ -41,12 +41,34 @@ namespace rowecoryfinalproj.Controllers
         public async Task<IActionResult> PutTeamMember(int id, TeamMember teamMember)
         {
             if (id != teamMember.Id)
+            {
                 return BadRequest();
+            }
 
             _context.Entry(teamMember).State = EntityState.Modified;
-            await _context.SaveChangesAsync();
+
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!TeamMemberExists(id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
 
             return NoContent();
+        }
+
+        private bool TeamMemberExists(int id)
+        {
+            return _context.TeamMembers.Any(e => e.Id == id);
         }
 
         [HttpDelete("{id}")]
