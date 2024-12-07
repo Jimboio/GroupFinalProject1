@@ -1,0 +1,6 @@
+@rowecoryfinalproj_HostAddress = http://localhost:5185
+
+GET {{rowecoryfinalproj_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
