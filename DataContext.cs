@@ -13,5 +13,13 @@ namespace rowecoryfinalproj
         public DbSet<Hobby> Hobbies { get; set; }
         public DbSet<FavoriteFood> FavoriteFoods { get; set; }
         public DbSet<FavoriteSport> FavoriteSports { get; set; }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            if (!optionsBuilder.IsConfigured)
+            {
+                optionsBuilder.UseSqlServer("Server=localhost\\SQLEXPRESS;Database=master;Trusted_Connection=True;");
+            }
+        }
     }
 }
